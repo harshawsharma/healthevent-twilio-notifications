@@ -4,7 +4,7 @@ A simple python program that is invoked for all health events that occur in your
 
 
 ### Prerequisites
-- Setup Twilio account and number [here](http://twilio.com/user/account) to obtain Account SID, Auth Token and a from phone number.
+- Setup Twilio account and number [here](http://twilio.com/user/account) to obtain Account SID, Auth Token and a 'from' phone number.
 
 ### The SAM template creates the following resources:
 - 1 Lambda Function, python 2.7 with 4 environment variables
