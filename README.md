@@ -1,6 +1,6 @@
-## health-twilio-notifications
+## healthevent-twilio-notifications
 
-A simple python program that is invoked for all health events that occur in your account, then sends a text message to a number specified in your lambda environment variable. 
+A simple python program that is invoked for all health events that occur in your account, then sends a text message using twilio to a number specified in your lambda environment variable. 
 
 
 ### Prerequisites
