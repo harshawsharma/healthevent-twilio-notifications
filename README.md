@@ -9,7 +9,7 @@ A simple python program that is invoked for all health events that occur in your
 ### The SAM template creates the following resources:
 - 1 Lambda Function, python 2.7 with 4 environment variables
 - 1 IAM Role with 1 Managed Policy
-- 1 Lambda Trigger, that allows health related Cloudwatch Events to invoke Lambda.
+- 1 CloudWatch Event that triggers the Lambda function when it sees any health related event
 
 
 
