@@ -1,0 +1,41 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+
+Parameters:
+    BucketName:
+        Type: String
+    CodeKey:
+        Type: String
+    TwilioAuthToken:
+        Type: String
+    TwilioAccountSID:
+        Type: String
+    ToPhoneNumber:
+        Type: String
+    FromPhoneNumber:
+        Type: String
+
+Resources:
+  healthpoc:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: lambda_function.lambda_handler
+      Runtime: python2.7
+      CodeUri:
+        Bucket: !Ref BucketName
+        Key: !Ref CodeKey
+
+      Events:
+        CloudWatchEvent1:
+          Type: CloudWatchEvent
+          Properties:
+            Pattern:
+              source:
+                - aws.health
+
+      Environment:
+        Variables:
+          ToPhoneNo: !Ref ToPhoneNumber
+          FromPhoneNo: !Ref FromPhoneNumber
+          TWILIO_AUTH_TOKEN: !Ref TwilioAuthToken
+          TWILIO_ACCOUNT_SID: !Ref TwilioAccountSID
